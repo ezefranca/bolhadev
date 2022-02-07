@@ -1,0 +1,262 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  header h1 {
+    font-family: "Arial Black", sans-serif;
+    font-size: 4.5em;
+    letter-spacing: -1px;
+    background-color: #273c75;
+    color: white;
+    padding: 5% 5% 5% 5%;
+    text-align:center;
+   }
+  .content .container h1 {
+    font-size: 48px;
+    margin-bottom: 2rem;
+  }
+  
+  .content .container p {
+    color: #ccc;
+  }
+  
+  .content .container p a {
+    color: #fff;
+  }
+  
+  footer {
+    width: 100%;
+    background-color: #273c75;
+    color: #fff;
+  }
+
+  footer a {
+    color: #fff;
+    font-weight: bolder;
+  }
+
+  footer span {
+    font-weight: lighter;
+    text-align:center;
+  }
+  
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .container .row {
+    width: 100%;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+  }
+  
+  .container .row:nth-child(2) {
+    grid-template-columns: repeat(1, 1fr);
+    margin-top: 1rem;
+  }
+  
+  .row .col {
+    height: 100%;
+    align-self: flex-start;
+  }
+  
+  .col h3 {
+    font-size: 30px;
+    margin-bottom: 1rem;
+  }
+  
+  ul li {
+    list-style-type: none;
+    margin: 0.75rem 0;
+  }
+  
+  ul li a {
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    padding: 7px 10px;
+    border-radius: 5px;
+    transition: 0.4s ease;
+  }
+  
+  ul li a:hover {
+    background-color: #5ac1d8;
+  }
+  
+  .container .row:nth-child(2) ul {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .container .row:nth-child(2) ul li a {
+    color: #ccc;
+    font-size: 16px;
+  }
+  
+  .container .row:nth-child(2) ul li a:hover {
+    background-color: transparent;
+  }
+  
+  .language ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  .language ul li {
+    margin: 0.5rem 0.5rem 0.5rem 0;
+  }
+  
+  .socail ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .socail ul li {
+    margin-right: 0.5rem;
+  }
+  
+  .socail ul li a {
+    font-size: 24px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .container .row {
+      grid-template-columns: repeat(1, 1fr);
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .col h3 {
+      font-size: 24px;
+    }
+  
+    .language {
+      margin: 1rem 0;
+    }
+  
+    ul li a {
+      font-size: 16px;
+    }
+  
+    .container .row:nth-child(2) ul li a {
+      font-size: 14px;
+    }
+  }
+  
+  @media screen and (max-width: 520px) {
+    .col h3 {
+      font-size: 18px;
+    }
+  
+    .language {
+      margin: 0.5rem 0;
+    }
+  
+    ul li a {
+      font-size: 14px;
+    }
+  
+    .container .row:nth-child(2) ul li a {
+      font-size: 12px;
+    }
+  }
+
+table { 
+    border-radius:6px;
+	border-collapse: collapse; 
+	margin:50px auto;
+	}
+
+    table {
+        table-layout: fixed;
+        width: 90%;
+    }
+    
+    table td {
+        word-wrap: break-word;         /* All browsers since IE 5.5+ */
+        overflow-wrap: break-word;     /* Renamed property in CSS3 draft spec */
+    }
+
+/* Zebra striping */
+tr:nth-of-type(odd) { 
+	background: #dcdde1; 
+	}
+
+th { 
+	background: #273c75; 
+	color: #f5f6fa; 
+	font-weight: bold; 
+	}
+
+td, th { 
+	padding: 10px; 
+	border: 1px solid #f5f6fa; 
+	text-align: left; 
+	font-size: 18px;
+	}
+
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	table { 
+	  	width: 100%; 
+	}
+
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	tr { border: 1px solid #ccc; }
+	
+	td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+	}
+
+	td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+		/* Label the data */
+		content: attr(data-column);
+
+		color: #000;
+		font-weight: bold;
+	}
+
+}
