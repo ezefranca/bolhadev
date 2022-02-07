@@ -57,9 +57,9 @@ function createElementsList(element, index, array) {
 function createElementInner(index, text, likes, author, tweet) {
     return `<td data-column="Ranking">${getEmoji(index)}${index + 1}</td>
     <td id="${index}" data-column="Tweet">${detectLinks(text)}</td>
-    <td data-column="Likes">${likes}</td>
-    <td data-column="Twitter"><sup><a href="${author}">Autor do Tweet</a></sup></td>
-    <td data-column="Twitter"><sup><a href="${tweet}">Link </a></sup></td>`
+    <td data-column="Likes+RT">${likes}</td>
+    <td data-column="Author"><sup><a href="${author}">Autor do Tweet</a></sup></td>
+    <td data-column="Link"><sup><a href="${tweet}">Link </a></sup></td>`
 }
 
 function getEmoji(index) {
