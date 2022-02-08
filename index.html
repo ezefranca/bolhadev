@@ -9,6 +9,7 @@
     <script type="text/javascript" src="bolhadev.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
   </head>
   <body>
     <header>
@@ -21,9 +22,9 @@
       
       <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
-          <button class="nav-link active" id="timeline-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">⏱ Ordenar por Tempo</button>
+          <button class="nav-link" id="timeline-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">⏱ Ordenar por Tempo</button>
         </li>
-        <li class="nav-item" role="presentation">
+        <li class="nav-item active" role="presentation">
           <button class="nav-link" id="ranking-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">🏅 Ordenar por Ranking</button>
         </li>
       </ul>
@@ -34,15 +35,15 @@
       </div>
       
       <table>
-        <col style="width:7%">
+        <col style="width:10%">
 	      <col style="width:60%">
-	      <col style="width:17%">
-        <col style="width:8%">
-        <col style="width:8%">
+	      <col style="width:16%">
+        <col style="width:7%">
+        <col style="width:7%">
         <thead id="thead">
           <tr>
-            <th>Ranking</th>
-            <th>Tweet</th>
+            <th><i class="bi bi-trophy"></i>Ranking</th>
+            <th><i class="bi bi-twitter"></i>Tweet</th>
             <th>Likes + RT</th>
             <th>Autor</th>
             <th>Tweet</th>
@@ -59,7 +60,7 @@
 </body>
 <footer>
   <div class="container">
-    <p><a href="https://github.com/ezefranca/bolhadev">Github</a></p>
+    <p><i class="bi bi-github"></i><a href="https://github.com/ezefranca/bolhadev">Github</a></p>
   <span>Esta página näo coleta nenhum dado.</span><br><span>Todo conteúdo aqui é resultado de consumo da API do Twitter, caso encontre algo inapropriado a única maneira de tirar do ar é reportar diretamente ao Twitter, todavia me mande <a href="https://twitter.com/ezefranca">@ezefranca</a> estou aberto a ajudar.</span><br><span>A API limita a 100 buscas, porém como temos muitos RT acabamos näo tendo os 100 aqui. <br> O ranking não constítui e garante nenhum tipo de prêmio.</span>
   </div>
 </footer>

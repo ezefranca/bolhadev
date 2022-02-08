@@ -109,9 +109,9 @@ function getEmoji(index) {
   }
 }
 
-function detectLinks(val) {
+function detectLinks(text) {
   return anchorme({
-    input: val,
+    input: text,
     options: {
       attributes: (arg) => {
         return {
