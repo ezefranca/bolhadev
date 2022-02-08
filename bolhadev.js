@@ -69,7 +69,6 @@ function createElementsList(element, index, array) {
 
 // TODO Refactor.
 function createElementInner(index, element, kind) {
-  console.log(kind)
   switch (kind) {
     
     case 'ranking':
@@ -133,7 +132,7 @@ function cleanTable() {
   }
 }
 
-window.setInterval(`getData()`, 60000)
+window.setInterval(`getData()`, 150000)
 
 window.onload = function () {
 
