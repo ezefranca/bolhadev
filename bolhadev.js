@@ -115,21 +115,21 @@ function createElementInner(index, element, kind) {
       return
 
     case 'timeline':
-      photo_url = element.user.profile_image_url.replace('_normal', '')
-      tweetTime = new Date(element.tweet.created_at)
+      let _photo_url = element.user.profile_image_url.replace('_normal', '')
+      let _tweetTime = new Date(element.tweet.created_at)
       var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric'};
       options.timeZoneName = 'short';
       var div = document.createElement('div');
       div.innerHTML = card_html
       div.innerHTML = div.innerHTML
-        .replace(/{RANKING}/g, "⏱  " + tweetTime.toLocaleDateString('pt-BR', options))
-        .replace(/{IMG_PROFILE}/g, photo_url)
+        .replace(/{RANKING}/g, "⏱  " + _tweetTime.toLocaleDateString('pt-BR', options))
+        .replace(/{IMG_PROFILE}/g, _photo_url)
         .replace(/{NAME}/g, element.user.name)
         .replace(/{URL_PROFILE}/g, `https://twitter.com/intent/user?user_id=${element.tweet.author_id}`)
         .replace(/{URL_TWEET}/g, `https://twitter.com/bolhadev/status/${element.tweet.id}`)
         .replace(/{USERNAME}/g, "@" + element.user.username)
         .replace(/{TEXT}/g, detectLinks(element.tweet.text))
-        .replace(/{CREATED_AT}/g,tweetTime.toLocaleDateString('pt-BR') + ", " + tweetTime.getHours() + "h:" + tweetTime.getMinutes() + "m")
+        .replace(/{CREATED_AT}/g,_tweetTime.toLocaleDateString('pt-BR') + ", " + _tweetTime.getHours() + "h:" + _tweetTime.getMinutes() + "m")
         .replace(/{TOTAL_LIKES}/g,  `<i class="fa-solid fa-heart"></i> Total Likes + <i class="fa-solid fa-share-from-square"></i> Retweets = <mark><strong> ${Number(element.tweet.public_metrics.retweet_count) + Number(element.tweet.public_metrics.reply_count) + Number(element.tweet.public_metrics.like_count) + 1} </strong></mark>`)
 
       document.getElementById('tweets').appendChild(div);
