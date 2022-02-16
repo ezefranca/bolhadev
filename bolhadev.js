@@ -48,6 +48,8 @@ var dataRaw = []
 var dataRanking = []
 
 function getData() {
+  dataRaw = []
+  dataRanking = []
     fetch('https://ezefranca.herokuapp.com/bolhadev?ref=RXNzYSBwb3JyYSBuw6RvIGZheiBuYWRhIGhhaGFoYWhh')
     .then(res => res.json())
     .then(json => {
