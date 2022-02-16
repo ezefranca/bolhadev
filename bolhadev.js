@@ -27,9 +27,9 @@ let card_html = `<br><div class="card">
 <h5 class="card-header"><a href={URL_TWEET}>{RANKING}</a></h5>
 <div class="card-body">
 <div class="row">
-  <div class="col-md-1">
+  <div class="col-md-2">
   <br>
-  <a href={URL_PROFILE}><img class="shadow" src={IMG_PROFILE} class="img-fluid rounded-start" alt="{NAME}"></a>
+  <a href={URL_PROFILE}><img class="shadow" src="{IMG_PROFILE}" class="img-fluid rounded-start" alt="{NAME}"></a>
 
     </div>
   <div class="col-md-10">
@@ -95,15 +95,17 @@ function createElementInner(index, element, kind) {
   switch (kind) {
 
     case 'ranking':
+      let photo_url = element.photo.replace('_normal', '')
+      let ranking = `#Ranking: ${getEmoji(index)}${index + 1}`
       var tweetTime = new Date(element.created_at)
       var div = document.createElement('div');
       div.innerHTML = card_html
       div.innerHTML = div.innerHTML
-        .replace(/{RANKING}/g, `#Ranking: ${getEmoji(index)}${index + 1}`)
-        .replace(/{IMG_PROFILE}/g, element.photo)
+        .replace(/{IMG_PROFILE}/g, photo_url)
+        .replace(/{RANKING}/g, ranking)
         .replace(/{NAME}/g, element.name)
         .replace(/{URL_PROFILE}/g, element.author)
-        .replace(/{URL_TWEET}/g, element.tweet)
+        .replace(/{URL_TWEET}/g, photo_url)
         .replace(/{USERNAME}/g, element.username)
         .replace(/{TEXT}/g, detectLinks(element.text))
         .replace(/{CREATED_AT}/g,tweetTime.toLocaleDateString('pt-BR') + "," + tweetTime.getHours() + ":" + tweetTime.getMinutes())
@@ -113,6 +115,7 @@ function createElementInner(index, element, kind) {
       return
 
     case 'timeline':
+      photo_url = element.user.profile_image_url.replace('_normal', '')
       tweetTime = new Date(element.tweet.created_at)
       var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric'};
       options.timeZoneName = 'short';
@@ -120,7 +123,7 @@ function createElementInner(index, element, kind) {
       div.innerHTML = card_html
       div.innerHTML = div.innerHTML
         .replace(/{RANKING}/g, "⏱  " + tweetTime.toLocaleDateString('pt-BR', options))
-        .replace(/{IMG_PROFILE}/g, element.user.profile_image_url)
+        .replace(/{IMG_PROFILE}/g, photo_url)
         .replace(/{NAME}/g, element.user.name)
         .replace(/{URL_PROFILE}/g, `https://twitter.com/intent/user?user_id=${element.tweet.author_id}`)
         .replace(/{URL_TWEET}/g, `https://twitter.com/bolhadev/status/${element.tweet.id}`)
